@@ -1,3 +1,39 @@
-<h1>
-  {{title}}
-</h1>
+<!--Exemplo HTML PURO-->
+<!--<div class="container-fluid">
+  <h1> Meu Personagem Favorito </h1>
+  <hr>
+  <p> Meu Nome: Matheus Marinho</p>
+  <p> Meu Personagem: Groot</p>
+  <p>Um filme: Guardiões da Galáxia Vol.2</p>
+  <p> Algo pra Digitar: <input type="text" value=""> </p>
+  <p> Seus Poderes: <select #poder>
+  <option value="Regeneração">Regeneração</option>
+  <option value="Elasticidade">Elasticidade</option>
+  <option value="Absorver Madeira">Absorver Madeira</option>
+</select> </p>
+  <h1> Amigos de Groot: </h1>
+  <h3>Senhor das Estrelas</h3>
+  <h3>Gamora</h3>
+  <h3>Rocket</h3>
+  <h3>Nebulosa</h3>
+  <button type="button">BUM!</button>
+  <br>
+  <img src="https://i.ytimg.com/vi/FAciZRkOKQs/maxresdefault.jpg" alt="Baby Groot">
+</div>-->
+<!--Usando Data-Binding e Diretivas-->
+<div class="container-fluid">
+  <h1> Meu Personagem Favorito </h1>
+  <hr>
+  <p> Meu Nome: {{ meuNome }}</p>
+  <p> Meu Personagem: {{ personagem }}</p>
+  <p>Um filme: {{ getFilme() }}</p>
+  <p> Algo pra Digitar: <input [disabled]="input" [(ngModel)]="meuNome" type="text" [ngClass]="{'borda-red': meuNome=='','borda-green': meuNome != ''}"> </p>
+  <p> Seus Poderes: <select class="borda-green" #habilidade>
+  <option *ngFor="let habilidade of habilidades"  value="{{ habilidade.id }}">{{ habilidade.habilidade }}</option>
+</select> <button (click)= "mostrarHabilidade(habilidade.value)" type="button">Mostrar!</button> </p>
+  <h1> Amigos de {{personagem}} </h1>
+  <h3 *ngFor="let amigos of nomesAmigos">{{amigos}}</h3>
+  <button (click)="aparecerImagem()" type="button">BUM!</button>
+  <br>
+  <img *ngIf="imagemVisivel"  [src]="imagem" alt="Baby Groot">
+</div>
