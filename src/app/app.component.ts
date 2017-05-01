@@ -18,10 +18,6 @@ export class AppComponent {
     return "Guardiões da Galáxia Vol.2"
   }
 
-  getPoder(poder){
-    console.log(poder)
-  }
-
   aparecerImagem(){
     this.imagemVisivel = !this.imagemVisivel
   }
