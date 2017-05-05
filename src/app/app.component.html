@@ -1,3 +1,75 @@
+<!--<app-navbar></app-navbar>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>-->
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Navbar</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLinkActive="active" class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a routerLinkActive="active" class="nav-link"  routerLink="/card" >Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="/home">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div *ngFor="let card of cards"  class="col-md-4">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" style="width: 317px; height: 300px" [src]="card.imagem" alt="Baby Groot">
+        <div class="card-block">
+          <h4 class="card-title">Meu Personagem: {{ card.nomePersonagem }}</h4>
+          <p class="card-text">Meu Nome: {{ card.meuNome }}.<br> Um filme: {{ card.filme }}.</p>      
+          <a href="#"  class="btn btn-primary">{{ card.nomeBotao }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--Exemplo HTML PURO-->
 <!--<div class="container-fluid">
   <h1> Meu Personagem Favorito </h1>
@@ -20,8 +92,21 @@
   <br>
   <img src="https://i.ytimg.com/vi/FAciZRkOKQs/maxresdefault.jpg" alt="Baby Groot">
 </div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--Usando Data-Binding e Diretivas-->
-<div class="container-fluid">
+<!--<div class="container-fluid">
   <h1> Meu Personagem Favorito </h1>
   <hr>
   <p> Meu Nome: {{ meuNome }}</p>
@@ -36,4 +121,4 @@
   <button (click)="aparecerImagem()" type="button">BUM!</button>
   <br>
   <img *ngIf="imagemVisivel"  [src]="imagem" alt="Baby Groot">
-</div>
+</div>-->
